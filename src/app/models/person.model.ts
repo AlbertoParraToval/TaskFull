@@ -3,4 +3,5 @@ export interface People{
   nombre:string;
   apodo:string;
   descripcion:string;
+  foto:string;
 }
