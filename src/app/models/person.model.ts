@@ -1,3 +1,4 @@
+//Estructura de People
 export interface People{
   id:number;
   nombre:string;

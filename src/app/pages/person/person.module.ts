@@ -17,7 +17,6 @@ import { PeopleComponent } from 'src/app/components/people/people.component';
     FormsModule,
     IonicModule,
     PersonPageRoutingModule,
-    PeopleComponentModule
   ],
   declarations: [PersonPage]
 })
