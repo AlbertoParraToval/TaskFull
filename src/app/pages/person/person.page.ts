@@ -7,7 +7,6 @@ import {  PersonService } from 'src/app/services/people.service';
 })
 export class PersonPage implements OnInit {
   public dataPerson:PersonService;
-  
   constructor(
     //Instancio esta variable la cual contendra los datos de la persona.
   ) { }
