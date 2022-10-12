@@ -5,10 +5,11 @@ import { People } from '../../models/person.model'
   templateUrl: './people.component.html',
   styleUrls: ['./people.component.scss'],
 })
-export class PeopleComponent implements OnInit {
+export class PeopleComponent {
 
-  @Input() p : People;
+  @Input() datos: People;
   constructor() { }
+
 
   ngOnInit() {}
 

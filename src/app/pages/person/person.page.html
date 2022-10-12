@@ -12,8 +12,8 @@
   <!--Se queda pegado en la derecha. Solucionar.-->
   <ion-grid>
     <ion-row class="ion-align-items-center">
-      <ion-col *ngFor="let p of getPeople()" size="9" size-sm="3" class="ion-align-self-center">
-        <app-person></app-person>
+      <ion-col  size="9" size-sm="3" class="ion-align-self-center">
+        <app-person *ngFor="let datos of getPeople()"></app-person> 
       </ion-col>
     </ion-row>
   </ion-grid>
