@@ -8,15 +8,13 @@ import { PersonPageRoutingModule } from './person-routing.module';
 
 import { PersonPage } from './person.page';
 import { PeopleComponentModule } from 'src/app/components/people/people.module';
-import { PeopleComponent } from 'src/app/components/people/people.component';
-
-
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     PersonPageRoutingModule,
+    PeopleComponentModule
   ],
   declarations: [PersonPage]
 })

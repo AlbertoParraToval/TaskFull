@@ -5,9 +5,10 @@ import { People } from '../../models/person.model'
   templateUrl: './people.component.html',
   styleUrls: ['./people.component.scss'],
 })
+
 export class PeopleComponent {
 
-  @Input() datos: People;
+  @Input() d: People;
   constructor() { }
 
 
