@@ -23,8 +23,8 @@ export class PeopleService {
   },
   {
     id:2,
-    name:'Manolo',
-    nickname:'Millón',
+    name:'Diego',
+    nickname:'Aguilera',
     image:'',
     description:"El chico que es mozo de almacén"
   },

@@ -5,11 +5,12 @@
           <img *ngIf="userInput.image == ''" alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
           <img *ngIf="userInput.image != ''" src="{{userInput.image}}" />
         </ion-avatar>
-        <ion-card-title> {{ userInput.name }},{{userInput.nickname}}</ion-card-title>
-        <ion-card-subtitle>{{userInput.description}}</ion-card-subtitle>
+        {{userInput.image}}
+        <ion-card-title> {{ userInput.name }} </ion-card-title>
+        <ion-card-subtitle>{{userInput.nickname}}</ion-card-subtitle>
       </ion-card-header>
       <ion-card-content>
-        {{userInput.image}}
+        {{userInput.description}}
       </ion-card-content>
     </ion-card>
 </ion-grid>
