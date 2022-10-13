@@ -3,7 +3,7 @@ import { User } from 'src/app/models/person.model';
 import { PeopleService } from 'src/app/services/people.service';
 
 @Component({
-  selector: 'app-person',
+  selector: 'app-people',
   templateUrl: './people.page.html',
   styleUrls: ['./people.page.scss'],
 })
@@ -15,7 +15,7 @@ export class PeoplePage implements OnInit {
   ngOnInit() {
   }
 
-  refresh(ev) {
+  refresh(ev: { detail: { complete: () => void; }; }) {
     setTimeout(() => {
       ev.detail.complete();
     }, 3000);

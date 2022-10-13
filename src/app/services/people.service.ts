@@ -11,25 +11,29 @@ export class PeopleService {
     id:0,
     name:'Diego',
     nickname:'Rodri',
-    image:''
+    image:'',
+    description:"El chico mas trabajador de Mayoral"
   },
   {
     id:1,
     name:'Alberto',
     nickname:'Parra',
-    image:''
+    image:'',
+    description:"El chico mas trabajador de Properly"
   },
   {
     id:2,
-    name:'Gabriela',
-    nickname:'Gaby',
-    image:''
+    name:'Manolo',
+    nickname:'Millón',
+    image:'',
+    description:"El chico que es mozo de almacén"
   },
   {
     id:3,
     name:'Alvaro',
     nickname:'Alvaroski',
-    image:''
+    image:'',
+    description:" El chico que es toxico en el lol"
   }
 
   ]
