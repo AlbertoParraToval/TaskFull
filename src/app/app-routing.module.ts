@@ -17,7 +17,7 @@ const routes: Routes = [
   },
   {
     path: 'person',
-    loadChildren: () => import('./pages/person/person.module').then( m => m.PersonPageModule)
+    loadChildren: () => import('./pages/people/people.module').then( m => m.PersonPageModule)
   },
   {
     path: 'tasks',

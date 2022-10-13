@@ -1,0 +1,17 @@
+<ion-item>
+  <ion-avatar slot="start">
+    <img *ngIf="userInput.image == ''" alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+    <img *ngIf="userInput.image != ''" src="{{userInput.image}}" />
+  </ion-avatar>
+    <ion-label>
+      <h1>
+      {{ userInput.name }}
+      </h1>
+      <h2>
+      {{userInput.nickname}}
+      </h2>
+      <h3>
+      {{userInput.image}}
+      </h3>
+    </ion-label>
+  </ion-item>

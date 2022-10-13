@@ -1,8 +1,7 @@
 //Estructura de People
-export interface People{
-  id:number;
-  nombre:string;
-  apodo:string;
-  descripcion:string;
-  foto:string;
+export interface User {
+  id: number;
+  name: string;
+  nickname: string;
+  image: string; //url
 }
