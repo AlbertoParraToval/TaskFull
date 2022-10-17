@@ -1,6 +1,5 @@
 <ion-header>
   <ion-toolbar>
-    
     <ion-buttons>
       <ion-back-button slot="start" defaultHref="/">Return</ion-back-button>
     </ion-buttons>
@@ -9,12 +8,14 @@
 </ion-header>
 
 <ion-content>
+  
   <!--Se queda pegado en la derecha. Solucionar.-->
   <ion-grid>
-    <ion-row class="ion-align-items-center">
+    <ion-button (click)="onNewPerson()" style="margin:10px;width:50px;height:50px;--border-radius:50%"  icon-only><ion-icon style="zoom:2" name="add-outline"></ion-icon></ion-button>
+    <ion-list class="ion-align-items-center">
       <ion-col size="9" size-sm="3" class="ion-align-self-center">
-        <app-user *ngFor="let user of getUser()" [userInput]="user"></app-user> 
+        <app-user *ngFor="let user of getUser()" [userdata]="user" (onEdit)="onEditPerson($event)" (onDelete)="onDeletePerson($event)"></app-user> 
       </ion-col>
-    </ion-row>
+    </ion-list>
   </ion-grid>
 </ion-content>
