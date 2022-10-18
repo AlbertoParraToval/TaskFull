@@ -8,26 +8,21 @@ import { tasksService } from 'src/app/services/tasks.service';
   styleUrls: ['./task-component.component.scss'],
 })
 export class TaskComponentComponent implements OnInit {
-
   @Input() taskdata: taskModel;
-  @Output() onDelete = new EventEmitter;
-  @Output() onEdit = new EventEmitter;
+  @Output() onDelete = new EventEmitter();
+  @Output() onEdit = new EventEmitter();
 
-  constructor(
-    private peopleSvc:tasksService
-  ) { }
+  constructor(private peopleSvc: tasksService) {}
 
   ngOnInit() {}
 
+  onEditClick() {
+    //console.log(this.taskdata)
+    this.onEdit.emit(this.taskdata);
+  }
 
-    onEditClick() {
-      //console.log(this.taskdata)
-      this.onEdit.emit(this.taskdata);
-    }
-
-
-    onDeleteClick() {
-      //console.log(this.userdata) me pilla el userdata
-      this.onDelete.emit(this.taskdata);
-      }
+  onDeleteClick() {
+    //console.log(this.userdata) me pilla el userdata
+    this.onDelete.emit(this.taskdata);
+  }
 }
