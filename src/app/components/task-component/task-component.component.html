@@ -1,0 +1,19 @@
+<ion-accordion-group>
+  <ion-item>
+    <ion-accordion>
+      <ion-item slot="header" color="light">
+        <ion-avatar style="width:50px;height:50px;margin:10px;margin-right:20px">
+          <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+        </ion-avatar>
+        <ion-label>{{taskdata.name}}, "{{taskdata.difficulty}}"</ion-label>
+      </ion-item>
+      <div  class="ion-padding" slot="content" >
+        {{taskdata.description}}, {{taskdata.timeInSeconds}}
+      </div>
+    </ion-accordion>
+  
+  
+    <ion-button icon-only fill="clear" color="success" (click)="onEditClick()"><ion-icon style="zoom:1.5" name="create-outline" ></ion-icon></ion-button>
+    <ion-button icon-only fill="clear" color="danger" (click)="onDeleteClick()"><ion-icon style="zoom:1.5" name="trash-outline" ></ion-icon></ion-button>
+  </ion-item>
+</ion-accordion-group> 

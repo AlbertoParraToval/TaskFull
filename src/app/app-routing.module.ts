@@ -25,7 +25,7 @@ const routes: Routes = [
   },
   {
     path: 'task-assign',
-    loadChildren: () => import('./pages/task-assign/task-assign.module').then( m => m.TaskAssignPageModule)
+    loadChildren: () => import('./pages/task_management/task-assign.module').then( m => m.TaskAssignPageModule)
   },
 ];
 
