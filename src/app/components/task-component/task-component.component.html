@@ -3,7 +3,8 @@
     <ion-accordion>
       <ion-item slot="header" color="light">
         <ion-avatar style="width:50px;height:50px;margin:10px;margin-right:20px">
-          <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          <img *ngIf="taskdata.image" alt="Person picture" [src]="taskdata.image" />
+          <img  *ngIf="!taskdata.image"  alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
         </ion-avatar>
         <ion-label>{{taskdata.name}}, "{{taskdata.difficulty}}"</ion-label>
       </ion-item>

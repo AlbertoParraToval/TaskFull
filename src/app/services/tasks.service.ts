@@ -12,28 +12,32 @@ export class tasksService {
     name: 'Neolibe',
     description: 'Creación de un proyecto de empresa para Fol.',
     difficulty: 'Intermedio',
-    timeInSeconds:'600000 s'
+    timeInSeconds:'600000 s',
+    image:""
   },
   {
     id:1,
     name: 'Renfe',
     description: 'Maquinista de un tren de la compañia renfe',
     difficulty: 'Principiante',
-    timeInSeconds:'600000 s'
+    timeInSeconds:'600000 s',
+    image:""
   },
   {
     id:2,
     name: 'TaskFull',
     description: 'Aplicación de la asignatura de ADD y HLC.',
     difficulty: 'Avanzado',
-    timeInSeconds:'600000 s'
+    timeInSeconds:'600000 s',
+    image:""
   },
   {
     id:3,
     name: 'Tarea Optativa de final de curso',
     description: 'En esta tarea la vamos a ir desarrollando en el tercer trimeste...',
     difficulty: 'Avanzado',
-    timeInSeconds:'600000 s'
+    timeInSeconds:'600000 s',
+    image:""
   }
 
   ]

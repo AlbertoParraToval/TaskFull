@@ -4,4 +4,5 @@ export interface taskModel {
   description: string;
   difficulty: string;
   timeInSeconds:String;
+  image:string;
 }
