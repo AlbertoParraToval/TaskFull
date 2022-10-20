@@ -52,7 +52,10 @@ export class PeoplePage implements OnInit {
     });
   }
 
+
+
   onNewPerson() {
+    
     this.presentPersonForm(null);
   }
 
