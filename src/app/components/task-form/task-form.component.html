@@ -15,12 +15,16 @@
       </ion-label>
       <ion-input type="text" placeholder="Introduce tu nombre completo" formControlName="name"></ion-input>
     </ion-item>
+
     <ion-item>
-      <ion-label position="floating">
-        Difficulty
-      </ion-label>
-      <ion-input type="text" placeholder="Introduce tu apodo" formControlName="difficulty"></ion-input>
+      <ion-label position="floating">Difficulty</ion-label>
+      <ion-select placeholder="Select One" formControlName="difficulty">
+        <ion-select-option value="Avanzado">Avanzado</ion-select-option>
+        <ion-select-option value="Intermedio">Intermedio</ion-select-option>
+        <ion-select-option value="Principiante">Principiante</ion-select-option>
+      </ion-select>
     </ion-item>
+
     <ion-item>
       <ion-label position="floating">
         Description
@@ -28,6 +32,7 @@
       <ion-input type="text" placeholder="Introduce una descripción" formControlName="description"></ion-input>
     </ion-item>
     <ion-item>
+      
       <ion-label position="floating">
         Time in Seconds
       </ion-label>

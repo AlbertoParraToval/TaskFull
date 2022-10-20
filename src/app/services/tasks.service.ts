@@ -11,7 +11,7 @@ export class tasksService {
     id:0,
     name: 'Neolibe',
     description: 'Creación de un proyecto de empresa para Fol.',
-    difficulty: 'Media',
+    difficulty: 'Intermedio',
     timeInSeconds:'600000 s'
   },
   {
@@ -32,7 +32,7 @@ export class tasksService {
     id:3,
     name: 'Tarea Optativa de final de curso',
     description: 'En esta tarea la vamos a ir desarrollando en el tercer trimeste...',
-    difficulty: 'Extrema',
+    difficulty: 'Avanzado',
     timeInSeconds:'600000 s'
   }
 

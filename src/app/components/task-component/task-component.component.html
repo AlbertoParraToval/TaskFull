@@ -7,7 +7,7 @@
         </ion-avatar>
         <ion-label>{{taskdata.name}}, "{{taskdata.difficulty}}"</ion-label>
       </ion-item>
-      <div  class="ion-padding" slot="content" >
+      <div  class="ion-padding" slot="content">
         {{taskdata.description}}, {{taskdata.timeInSeconds}}
       </div>
     </ion-accordion>
@@ -16,4 +16,5 @@
     <ion-button icon-only fill="clear" color="success" (click)="onEditClick()"><ion-icon style="zoom:1.5" name="create-outline" ></ion-icon></ion-button>
     <ion-button icon-only fill="clear" color="danger" (click)="onDeleteClick()"><ion-icon style="zoom:1.5" name="trash-outline" ></ion-icon></ion-button>
   </ion-item>
+
 </ion-accordion-group> 
