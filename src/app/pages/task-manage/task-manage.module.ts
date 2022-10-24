@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { TaskAssignPageRoutingModule } from './task-assign-routing.module';
+import { TaskManagePageRoutingModule } from './task-manage-routing.module';
 
-import { TaskAssignPage } from './task-assign.page';
+import { TaskManagePage } from './task-manage.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TaskAssignPageRoutingModule
+    TaskManagePageRoutingModule
   ],
-  declarations: [TaskAssignPage]
+  declarations: [TaskManagePage, ]
 })
-export class TaskAssignPageModule {}
+export class TaskManagePageModule {}

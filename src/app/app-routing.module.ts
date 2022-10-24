@@ -24,9 +24,15 @@ const routes: Routes = [
     loadChildren: () => import('./pages/tasks/tasks.module').then( m => m.TasksPageModule)
   },
   {
-    path: 'task-assign',
-    loadChildren: () => import('./pages/task_management/task-assign.module').then( m => m.TaskAssignPageModule)
+    path: 'task-manage',
+    loadChildren: () => import('./pages/task-manage/task-manage.module').then( m => m.TaskManagePageModule)
   },
+  {
+    path: 'assign',
+    loadChildren: () => import('./pages/assign/assign.module').then( m => m.AssignPageModule)
+  },
+
+
 ];
 
 @NgModule({

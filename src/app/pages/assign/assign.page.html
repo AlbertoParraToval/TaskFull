@@ -3,11 +3,14 @@
     <ion-buttons>
       <ion-back-button slot="start" defaultHref="/">Return</ion-back-button>
     </ion-buttons>
-    <ion-title slot="end">Assign</ion-title>
+    <ion-title slot="end">Assignments</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <!--Enrutado a la pagina principal-->
-  
+  <ion-grid>
+  <ion-list *ngFor="let assignment of getAssignments()">
+      <app-assignment  [assignment]="assignment" (onEdit)="onEditAssign($event)" (onDelete)="onDeleteAssign($event)"></app-assignment>
+  </ion-list>
+</ion-grid>
 </ion-content>

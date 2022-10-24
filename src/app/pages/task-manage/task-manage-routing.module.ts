@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { TaskAssignPage } from './task-assign.page';
+import { TaskManagePage } from './task-manage.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: TaskAssignPage
+    component: TaskManagePage
   }
 ];
 
@@ -14,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class TaskAssignPageRoutingModule {}
+export class TaskManagePageRoutingModule {}
