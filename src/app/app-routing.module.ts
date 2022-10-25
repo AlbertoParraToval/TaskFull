@@ -12,10 +12,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'assign',
-    loadChildren: () => import('./pages/assign/assign.module').then( m => m.AssignPageModule)
-  },
-  {
     path: 'person',
     loadChildren: () => import('./pages/people/people.module').then( m => m.PeoplePageModule)
   },
