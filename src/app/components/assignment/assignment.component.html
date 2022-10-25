@@ -1,10 +1,10 @@
 <ion-accordion-group>
   <ion-item>
   <ion-accordion>
-    <!-- <ion-avatar style="width:50px;height:50px;margin:10px;margin-right:20px">
-      //<img *ngIf="taskdata.image" alt="Person picture" [src]="taskdata.image" />
-     <img  *ngIf="!taskdata.image"  alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" /> 
-    </ion-avatar>-->
+    <ion-avatar style="width:50px;height:50px;margin:10px;margin-right:20px">
+      //<img *ngIf="getUserImage" alt="Person picture" [src]="getUserImage" />
+     <img  *ngIf="!getUserImage"  alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" /> 
+    </ion-avatar>
 </ion-accordion>
 <ion-card-subtitle>{{assignment.dateTime}}</ion-card-subtitle>
   <ion-button icon-only fill="clear" (click)="onEditClick()"><ion-icon style="zoom:1.5" name="pencil-sharp"></ion-icon></ion-button>

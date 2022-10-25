@@ -47,6 +47,14 @@ export class AssignmentComponent implements OnInit {
     return undefined;
   }
 
+  getUserImage():User{
+    var userImg = this.assignment.id;
+    if(userImg)
+      return this.peopleSvc.getUserImg(userImg);
+    return undefined;
+  }
+
+
   onEditClick(){
     this.onEdit.emit(this.assignment);
   }

@@ -51,6 +51,10 @@ export class PeopleService {
     return this.people[id];
   }
 
+  public getUserImg(id: number): User{
+    return this.people[id];
+  }
+
   deleteUserById(id: number){
     this.people = this.people.filter(p=>p.id != id); 
   }
