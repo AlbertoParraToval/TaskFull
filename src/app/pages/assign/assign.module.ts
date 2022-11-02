@@ -6,6 +6,7 @@ import { AssignPageRoutingModule } from './assign-routing.module';
 import { AssignPage } from './assign.page';
 import { AssignDetailComponent } from 'src/app/components/assign-detail/assign-detail.component';
 import { AssignmentComponent } from 'src/app/components/assignment/assignment.component';
+import { PersonSelectableComponent } from 'src/app/components/person-selectable/person-selectable.component';
 
 @NgModule({
   imports: [
@@ -13,8 +14,9 @@ import { AssignmentComponent } from 'src/app/components/assignment/assignment.co
     FormsModule,
     IonicModule,
     AssignPageRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
   ],
-  declarations: [AssignPage, AssignDetailComponent, AssignmentComponent]
+  declarations: [AssignPage, AssignDetailComponent, AssignmentComponent,PersonSelectableComponent]
 })
 export class AssignPageModule {}

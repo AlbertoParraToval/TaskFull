@@ -18,8 +18,7 @@ export class AssignmentComponent implements OnInit {
   @Output() onEdit = new EventEmitter;
   @Output() onDelete = new EventEmitter;
   @Input() assignment:assignModel;
-  //isLowResolution = lowres;
-
+  isLowResolution = lowres;
   constructor(
     private peopleSvc:PeopleService,
     private tasksSvc:tasksService,
@@ -48,18 +47,22 @@ export class AssignmentComponent implements OnInit {
   }
 
   getUserImage():User{
-    var userImg = this.assignment.id;
-    if(userImg)
-      return this.peopleSvc.getUserImg(userImg);
+    var image= this.assignment.id;
+    if(image)
+      return this.peopleSvc.getUserImg(image);
     return undefined;
   }
 
 
-  onEditClick(){
+
+  onEditClick(slide:IonItemSliding){
+    slide.close();
     this.onEdit.emit(this.assignment);
   }
 
-  onDeleteClick(){
+  onDeleteClick(slide:IonItemSliding){
+    slide.close();
     this.onDelete.emit(this.assignment);
   }
+
 }

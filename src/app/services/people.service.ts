@@ -12,28 +12,28 @@ export class PeopleService {
     name:'Diego Rodri',
     nickname:'Rodri',
     description:"El chico mas trabajador de Mayoral",
-    image:""
+    image:"https://drive.google.com/file/d/1IHAixUa3BRIGSmI310pA_bCpmJaU-s2h/view?usp=share_link"
   },
   {
     id:1,
     name:'Alberto Parra',
     nickname:'Parringson',
     description:"El chico mas trabajador de Properly",
-    image:""
+    image:"https://drive.google.com/uc?export=view&id=1p_7irDllBxDp-PGoUWPnpEKudQNewZPL"
   },
   {
     id:2,
-    name:'Diego Aguilera',
-    nickname:'DevAgui',
+    name:'Óscar Ortega',
+    nickname:'Osquinha',
     description:"El chico que es mozo de almacén",
-    image:""
+    image:"https://drive.google.com/file/d/1-sm2bufSk9nOvwtKeZhrsdmWd2xhAsoU/view?usp=sharing"
   },
   {
     id:3,
-    name:'Alvaro Lineros',
-    nickname:'Alvaroski',
+    name:'Pablo Gonzalez',
+    nickname:'Mafia',
     description:" El chico que es toxico en el lol",
-    image:""
+    image:"https://drive.google.com/file/d/1iE9LT-zpBR654Mswcj9zmRsVJG6Wu9xp/view?usp=share_link"
   }
 
   ]
