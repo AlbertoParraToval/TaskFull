@@ -41,6 +41,6 @@ export class PersonSelectableComponent implements OnInit {
   onPersonClicked(person:User, accordion:IonAccordionGroup){
     this.selectedPerson = person;
     accordion.value='';
-    this.propagateChange(this.selectedPerson.id);
+    this.propagateChange(this.selectedPerson.userId);
   }
 }

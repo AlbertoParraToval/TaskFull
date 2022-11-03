@@ -13,7 +13,10 @@ import { assignmentService } from 'src/app/services/assignment.service';
 export class AssignDetailComponent implements OnInit {
   form:FormGroup;
   mode:"New" | "Edit" = "New";
-  @Input('assignment') set assignment(assignment:assignModel){
+  
+  @Input('assignment') set assignment_(assignment:assignModel){
+    
+    console.log("Patata")
     if(assignment){
       this.form.controls.id.setValue(assignment.id);
       this.form.controls.taskId.setValue(assignment.taskId);

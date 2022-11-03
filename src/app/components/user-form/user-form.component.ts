@@ -18,7 +18,7 @@ export class UserFormComponent implements OnInit {
   @Input('userdata') set person(userdata: User){
     //console.log(userdata)
     if(userdata){
-      this.form.controls.id.setValue(userdata.id);
+      this.form.controls.id.setValue(userdata.userId);
       this.form.controls.name.setValue(userdata.name);
       this.form.controls.nickname.setValue(userdata.nickname);
       this.form.controls.description.setValue(userdata.description);

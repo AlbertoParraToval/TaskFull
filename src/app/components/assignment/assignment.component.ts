@@ -40,9 +40,9 @@ export class AssignmentComponent implements OnInit {
   }
 
   getPerson():User{
-    var idPerson = this.assignment.id;
-    if(idPerson)
-      return this.peopleSvc.getUserById(idPerson);
+    var UserId = this.assignment.id;
+    if(UserId)
+      return this.peopleSvc.getUserById(UserId);
     return undefined;
   }
 
@@ -56,6 +56,7 @@ export class AssignmentComponent implements OnInit {
 
 
   onEditClick(slide:IonItemSliding){
+    console.log("Patata")
     slide.close();
     this.onEdit.emit(this.assignment);
   }
