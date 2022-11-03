@@ -25,14 +25,14 @@ export class PeopleService {
     id:2,
     name:'Óscar Ortega',
     nickname:'Osquinha',
-    description:"El chico que es mozo de almacén",
+    description:"Tiene dos pies izquierdos mi colega",
     image:'https://drive.google.com/uc?export=view&id=1-sm2bufSk9nOvwtKeZhrsdmWd2xhAsoU'
   },
   {
     id:3,
     name:'Pablo Gonzalez',
     nickname:'Mafia',
-    description:" El chico que es toxico en el lol",
+    description:" Lo más cerca que ha estado de correr fue cuando...",
     image:"https://drive.google.com/uc?export=view&id=1iE9LT-zpBR654Mswcj9zmRsVJG6Wu9xp"
   }
 
