@@ -13,7 +13,7 @@ export class tasksService {
     description: 'Creación de un proyecto de empresa para Fol.',
     difficulty: 'Intermedio',
     timeInSeconds:'600000 s',
-    image:""
+    image:"https://drive.google.com/uc?export=view&id=15q5tFeQeF9D1EVB_tfOM7JsFPACNn5Wy"
   },
   {
     id:1,
@@ -21,7 +21,7 @@ export class tasksService {
     description: 'Maquinista de un tren de la compañia renfe',
     difficulty: 'Principiante',
     timeInSeconds:'600000 s',
-    image:""
+    image:"https://drive.google.com/uc?export=view&id=1753TVT8n-MGC4NyRBengw6JXa3ssjGHs"
   },
   {
     id:2,
@@ -29,7 +29,7 @@ export class tasksService {
     description: 'Aplicación de la asignatura de ADD y HLC.',
     difficulty: 'Avanzado',
     timeInSeconds:'600000 s',
-    image:""
+    image:"https://drive.google.com/uc?export=view&id=18yHE0K50gA2jAlVpvMkwaXMOUAm5nc0f"
   },
   {
     id:3,
@@ -37,7 +37,7 @@ export class tasksService {
     description: 'En esta tarea la vamos a ir desarrollando en el tercer trimeste...',
     difficulty: 'Avanzado',
     timeInSeconds:'600000 s',
-    image:""
+    image:"https://drive.google.com/uc?export=view&id=1ktzouQQvyHySkGGv7C2kaNu0sHPW4eh5"
   }
 
   ]

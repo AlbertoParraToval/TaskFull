@@ -76,6 +76,10 @@ export class AssignPage implements OnInit {
     const { role } = await alert.onDidDismiss();
   }
 
+  onNewAssignment(){
+    this.presentAssignForm(null);  
+  }
+
   onDeleteAssign(assignment){
     this.onDeleteAlert(assignment);
     

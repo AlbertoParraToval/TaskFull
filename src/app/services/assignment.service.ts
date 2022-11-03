@@ -30,13 +30,6 @@ export class assignmentService {
     taskId:3,
     createdAt:this.momentjs().toISOString(),
     dateTime:this.momentjs().add(1, 'days').toISOString(),
-  },
-  {
-    id:4,
-    userId:4,
-    taskId:4,
-    createdAt:this.momentjs().toISOString(),
-    dateTime:this.momentjs().add(1, 'days').toISOString(),
   }
   ]
   
