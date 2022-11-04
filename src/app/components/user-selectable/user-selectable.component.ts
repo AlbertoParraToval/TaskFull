@@ -4,23 +4,23 @@ import { User } from 'src/app/models/user.model';
 import { PeopleService } from 'src/app/services/people.service';
 
 @Component({
-  selector: 'app-person-selectable',
-  templateUrl: './person-selectable.component.html',
-  styleUrls: ['./person-selectable.component.scss'],
+  selector: 'app-user-selectable',
+  templateUrl: './user-selectable.component.html',
+  styleUrls: ['./user-selectable.component.scss'],
 })
-export class PersonSelectableComponent implements OnInit {
-
-  selectedPerson:User=null;
+export class UserSelectableComponent implements OnInit {
+  selectedUser:User=null;
   propagateChange = (_: any) => { }
   isDisabled:boolean = false;
 
   constructor(
-    private peopleSvc:PeopleService
+    private UserSVC:PeopleService
   ) { }
 
 
   writeValue(obj: any): void {
-    this.selectedPerson = this.peopleSvc.getUserById(obj);
+    console.log(this.UserSVC.getUserById(obj).image);
+    this.selectedUser = this.UserSVC.getUserById(obj);
   }
   registerOnChange(fn: any): void {
     this.propagateChange = fn;
@@ -35,12 +35,14 @@ export class PersonSelectableComponent implements OnInit {
   ngOnInit() {}
 
   getPeople(){
-    return this.peopleSvc.getUser();
+    return this.UserSVC.getUser();
   } 
 
-  onPersonClicked(person:User, accordion:IonAccordionGroup){
-    this.selectedPerson = person;
+  onUserClicked(user:User, accordion:IonAccordionGroup){
+    console.log(user);
+    this.selectedUser = user;
     accordion.value='';
-    this.propagateChange(this.selectedPerson.userId);
+    this.propagateChange(this.selectedUser.id);
   }
+
 }

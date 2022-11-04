@@ -1,0 +1,25 @@
+<ion-accordion-group [multiple]="true" #accordion>
+  <ion-accordion value="first">
+    <ion-item slot="header" color="light">
+      <ng-container *ngIf="selectedUser!=null">
+        <ion-avatar class="person">
+          <img *ngIf="!selectedUser?.image" alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          <img *ngIf="selectedUser?.image" alt="Person picture" [src]="selectedUser?.image" />
+        </ion-avatar>
+        <ion-label>{{selectedUser?.name}}, {{selectedUser?.nickname}}</ion-label>
+      </ng-container>
+      <ion-label *ngIf="!selectedUser">Selecciona una persona</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">
+      <ion-list>
+        <ion-item *ngFor="let userdata of getPeople()" button detail  (click)="onUserClicked(userdata, accordion)">
+          <ion-avatar class="person">
+            <img *ngIf="!userdata.image" alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            <img *ngIf="userdata.image" alt="Person picture" [src]="userdata.image" />
+          </ion-avatar>
+          <ion-label>{{userdata.nickname}}, {{userdata.name}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-accordion>
+</ion-accordion-group>

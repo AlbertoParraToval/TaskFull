@@ -8,7 +8,7 @@ import { assignModel } from '../models/assign.model';
 
 export class assignmentService {
   momentjs:any = moment;
-  public assign_ : assignModel[] = [
+  public assignInfo : assignModel[] = [
   {
     id:1,
     userId:1,
@@ -33,45 +33,44 @@ export class assignmentService {
   }
   ]
   
-  id:number = this.assign_.length+1;
+  id:number = this.assignInfo.length + 1;
 
   constructor() {
 
   }
 
   getAssignments(){
-    return this.assign_;
+    return this.assignInfo;
   }
 
   getAssignmentById(id:number){
-    return this.assign_.find(a=>a.id==id);
+    return this.assignInfo.find(a=>a.id==id);
   }
 
-  getAssignmentsByTaskId(taskId:number): assignModel[]{
-    return this.assign_.filter(a=>a.taskId == taskId);
+  getAssignmentsByTaskId(id:number): assignModel[]{
+    return this.assignInfo.filter(a=>a.taskId == id);
   }
 
-  getAssignmentsByPersonId(userId:number):assignModel[]{
-    return this.assign_.filter(a=>a.id == userId);
+  getAssignmentsByPersonId(id:number):assignModel[]{
+    return this.assignInfo.filter(a=>a.userId == id);
   }
 
   deleteAssignmentById(id:number){
-    this.assign_ = this.assign_.filter(a=>a.id != id); 
+    this.assignInfo = this.assignInfo.filter(a=>a.id != id); 
   }
 
   addAssignment(assingment:assignModel){
     assingment.id = this.id++;
-    this.assign_.push(assingment);
+    this.assignInfo.push(assingment);
   }
 
-  updateAssignment(assignment:assignModel){
-    var assignment = this.assign_.find(a=>a.id==assignment.id);
-    if(assignment){
-      assignment.taskId = assignment.taskId;
-      assignment.userId = assignment.userId;
-      assignment.createdAt = assignment.createdAt;
-      assignment.dateTime = assignment.dateTime;
+  updateAssignment(assignmentUpdate:assignModel){
+    var assignment = this.assignInfo.find(a=>a.id==assignmentUpdate.id);
+    if(assignmentUpdate){
+      assignment.taskId = assignmentUpdate.taskId;
+      assignment.userId = assignmentUpdate.userId;
+      assignment.createdAt = assignmentUpdate.createdAt;
+      assignment.dateTime = assignmentUpdate.dateTime;
     }
-    
   }
 }

@@ -15,55 +15,36 @@ import { taskModel } from 'src/app/models/taskModel.model';
 })
 export class AssignmentComponent implements OnInit {
 
-  @Output() onEdit = new EventEmitter;
-  @Output() onDelete = new EventEmitter;
-  @Input() assignment:assignModel;
-  isLowResolution = lowres;
+  @Output() onEdit = new EventEmitter();
+  @Output() onDelete = new EventEmitter();
+  @Input() assign: assignModel;
   constructor(
-    private peopleSvc:PeopleService,
-    private tasksSvc:tasksService,
-    private assignSvc:assignmentService
-  ){
+    private peopleSvc: PeopleService,
+    private tasksSvc: tasksService,
+    private assignmentsSvc: assignmentService
+  ) {}
 
-  }
+  ngOnInit() {}
 
-  ngOnInit(
-  ) {
-
-  }
-
+  // METHODS
   getTask():taskModel{
-    var idTask = this.assignment.id;
-    if(idTask)
-      return this.tasksSvc.getTaskById(idTask);
+    var taskId = this.assign.id;
+    if(taskId)
+      return this.tasksSvc.getTaskById(taskId);
     return undefined;
   }
 
-  getPerson():User{
-    var UserId = this.assignment.id;
-    if(UserId)
-      return this.peopleSvc.getUserById(UserId);
-    return undefined;
+  getUser():User{
+    var userId = this.assign.id;
+    if(userId)
+      return this.peopleSvc.getUserById(userId);
   }
 
-  getUserImage():User{
-    var image= this.assignment.id;
-    if(image)
-      return this.peopleSvc.getUserImg(image);
-    return undefined;
+  onEditClick(){
+    this.onEdit.emit(this.assign);
   }
 
-
-
-  onEditClick(slide:IonItemSliding){
-    console.log("Patata")
-    slide.close();
-    this.onEdit.emit(this.assignment);
+  onDeleteClick(){
+    this.onDelete.emit(this.assign);
   }
-
-  onDeleteClick(slide:IonItemSliding){
-    slide.close();
-    this.onDelete.emit(this.assignment);
-  }
-
 }

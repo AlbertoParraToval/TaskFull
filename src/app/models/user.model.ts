@@ -1,6 +1,6 @@
 //Estructura de People
 export interface User {
-  userId: number;
+  id: number;
   name: string;
   nickname: string;
   image: string; //url

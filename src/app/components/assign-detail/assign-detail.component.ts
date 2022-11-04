@@ -5,6 +5,7 @@ import { assignModel } from 'src/app/models/assign.model';
 import { PeopleService } from 'src/app/services/people.service';
 import { tasksService } from 'src/app/services/tasks.service';
 import { assignmentService } from 'src/app/services/assignment.service';
+import { User } from 'src/app/models/user.model';
 @Component({
   selector: 'app-assign-detail',
   templateUrl: './assign-detail.component.html',
@@ -12,51 +13,52 @@ import { assignmentService } from 'src/app/services/assignment.service';
 })
 export class AssignDetailComponent implements OnInit {
   form:FormGroup;
-  mode:"New" | "Edit" = "New";
-  
-  @Input('assignment') set assignment_(assignment:assignModel){
-    
-    console.log("Patata")
-    if(assignment){
-      this.form.controls.id.setValue(assignment.id);
-      this.form.controls.taskId.setValue(assignment.taskId);
-      this.form.controls.userId.setValue(assignment.userId);
-      this.form.controls.dateTime.setValue(assignment.dateTime);
+  mode: "New" | "Edit" = "New";
+
+  @Input('assign') set assign(assignInfo:assignModel){
+    if(assignInfo){
+      this.form.controls.id.setValue(assignInfo.id);
+      this.form.controls.userId.setValue(assignInfo.userId);
+      this.form.controls.taskId.setValue(assignInfo.taskId);
+      this.form.controls.dateTime.setValue(assignInfo.dateTime);
       this.mode = "Edit";
     }
-  }
-  
 
-  constructor(
-    private tasksSvc:tasksService,
-    private peopleSvc:PeopleService,
-    private assignmentsSvc:assignmentService,
-    private fb:FormBuilder,
-    private modal:ModalController
-  ) { 
-    this.form = this.fb.group({
+  }
+  constructor(private formBuilder:FormBuilder,
+              private userSVC:PeopleService,
+              private taskSVC:tasksService,
+              private modal:ModalController
+    ) {
+    this.form = this.formBuilder.group({ 
       id:[null],
-      taskId:[-1, [Validators.min(0)]],
-      personId:[-1, [Validators.min(0)]],
-      dateTime:['', [Validators.required]],
+      userId:[-1,Validators.min(1)],
+      taskId:[-1,Validators.min(1)],
+      dateTime:["",Validators.required]
     });
   }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   onSubmit(){
-    
-    this.modal.dismiss({assignment: this.form.value, mode:this.mode}, 'ok');
+    console.log(this.form.value)
+      this.modal.dismiss({assign: this.form.value, mode: this.mode}, 'ok')
   }
 
   onDismiss(result){
-    this.modal.dismiss(null, 'cancel');
+    this.modal.dismiss(null,'cancel'); 
   }
 
-  onChangeDateTime(dateTime){
-    this.form.controls.dateTime.setValue(dateTime);
+  getPeople(){
+    return this.userSVC.getUser();
+  }
+
+  getTask(){
+    return this.taskSVC.getTask();
+  }
+
+  onChange(event){
+    this.form.controls.dateTime.setValue(event.detail.value);
   }
 
 }

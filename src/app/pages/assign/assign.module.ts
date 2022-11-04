@@ -6,7 +6,7 @@ import { AssignPageRoutingModule } from './assign-routing.module';
 import { AssignPage } from './assign.page';
 import { AssignDetailComponent } from 'src/app/components/assign-detail/assign-detail.component';
 import { AssignmentComponent } from 'src/app/components/assignment/assignment.component';
-import { PersonSelectableComponent } from 'src/app/components/person-selectable/person-selectable.component';
+import { UserSelectableComponent } from 'src/app/components/user-selectable/user-selectable.component';
 
 @NgModule({
   imports: [
@@ -17,6 +17,6 @@ import { PersonSelectableComponent } from 'src/app/components/person-selectable/
     ReactiveFormsModule,
     
   ],
-  declarations: [AssignPage, AssignDetailComponent, AssignmentComponent,PersonSelectableComponent]
+  declarations: [AssignPage, AssignDetailComponent, AssignmentComponent,UserSelectableComponent]
 })
 export class AssignPageModule {}

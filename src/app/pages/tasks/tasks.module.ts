@@ -9,6 +9,7 @@ import { TasksPageRoutingModule } from './tasks-routing.module';
 import { TasksPage } from './tasks.page';
 import { TaskFormComponent } from 'src/app/components/task-form/task-form.component';
 import { TaskComponentComponent } from 'src/app/components/task-component/task-component.component';
+import { TaskSelectableComponent } from 'src/app/components/task-selectable/task-selectable.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,6 @@ import { TaskComponentComponent } from 'src/app/components/task-component/task-c
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [TasksPage,TaskFormComponent,TaskComponentComponent]
+  declarations: [TasksPage,TaskFormComponent,TaskComponentComponent, TaskSelectableComponent]
 })
 export class TasksPageModule {}

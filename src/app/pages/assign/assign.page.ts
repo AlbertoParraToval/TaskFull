@@ -10,6 +10,7 @@ import { assignmentService } from 'src/app/services/assignment.service';
 })
 export class AssignPage implements OnInit {
 
+  public assigns:AssignDetailComponent;
   constructor(
     private assignmentsSvc:assignmentService,
     private modal:ModalController,
@@ -18,27 +19,27 @@ export class AssignPage implements OnInit {
 
   ngOnInit() {}
 
-  getAssignments(){
+  getAssign(){
     return this.assignmentsSvc.getAssignments();
   }
 
-  async presentAssignForm(assignment:AssignDetailComponent){
+  async presentAssignForm(assign:AssignDetailComponent){
     const modal = await this.modal.create({
       component:AssignDetailComponent,
       componentProps:{
-        person:assignment
+        assign:assign
       },
-      cssClass:"modal-full-right-side"
     });
     modal.present();
     modal.onDidDismiss().then(result=>{
       if(result && result.data){
+        
         switch(result.data.mode){
           case 'New':
-            this.assignmentsSvc.addAssignment(result.data.assignment);
+            this.assignmentsSvc.addAssignment(result.data.assign);
             break;
           case 'Edit':
-            this.assignmentsSvc.updateAssignment(result.data.assignment);
+            this.assignmentsSvc.updateAssignment(result.data.assign);
             break;
           default:
         }
@@ -46,11 +47,11 @@ export class AssignPage implements OnInit {
     });
   }
 
-  onEditAssign(assignment){
-    this.presentAssignForm(assignment);
+  onEditAssign(assign){
+    this.presentAssignForm(assign);
   }
 
-  async onDeleteAlert(assignment){
+  async onDeleteAlert(assign){
     const alert = await this.alert.create({
       header: '¿Está seguro de que desear borrar la asignación de tarea?',
       buttons: [
@@ -65,7 +66,7 @@ export class AssignPage implements OnInit {
           text: 'Borrar',
           role: 'confirm',
           handler: () => {
-            this.assignmentsSvc.deleteAssignmentById(assignment.id);
+            this.assignmentsSvc.deleteAssignmentById(assign.id);
           },
         },
       ],
@@ -80,8 +81,8 @@ export class AssignPage implements OnInit {
     this.presentAssignForm(null);  
   }
 
-  onDeleteAssign(assignment){
-    this.onDeleteAlert(assignment);
+  onDeleteAssign(assign){
+    this.onDeleteAlert(assign);
     
   }
 

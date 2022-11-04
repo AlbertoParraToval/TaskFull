@@ -8,28 +8,28 @@ import { User } from '../models/user.model';
 export class PeopleService {
   public people: User[] = [
   {
-    userId:0,
+    id:0,
     name:'Diego Rodri',
     nickname:'Rodri',
     description:"El chico mas trabajador de Mayoral",
     image:"https://drive.google.com/uc?export=view&id=1IHAixUa3BRIGSmI310pA_bCpmJaU-s2h"
   },
   {
-    userId:1,
+    id:1,
     name:'Alberto Parra',
     nickname:'Parringson',
     description:"El chico mas trabajador de Properly",
     image:"https://drive.google.com/uc?export=view&id=1p_7irDllBxDp-PGoUWPnpEKudQNewZPL"
   },
   {
-    userId:2,
+    id:2,
     name:'Óscar Ortega',
     nickname:'Osquinha',
     description:"Tiene dos pies izquierdos mi colega",
     image:'https://drive.google.com/uc?export=view&id=1-sm2bufSk9nOvwtKeZhrsdmWd2xhAsoU'
   },
   {
-    userId:3,
+    id:3,
     name:'Pablo Gonzalez',
     nickname:'Mafia',
     description:" Lo más cerca que ha estado de correr fue cuando...",
@@ -56,17 +56,17 @@ export class PeopleService {
   }
 
   deleteUserById(id: number){
-    this.people = this.people.filter(p=>p.userId != id); 
+    this.people = this.people.filter(p=>p.id != id); 
   }
 
   addPerson(userdata:User){
     //console.log(userdata)
-    userdata.userId = this.id++
+    userdata.id = this.id++
     this.people.push(userdata);
   }
 
   updatePerson(userUpdate:User){
-    var userdata = this.people.find(p=>p.userId==userUpdate.userId);
+    var userdata = this.people.find(p=>p.id==userUpdate.id);
     //console.log(userdata) me lo lee
     if(userUpdate){
       userdata.name = userUpdate.name;
