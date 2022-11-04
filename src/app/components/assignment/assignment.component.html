@@ -8,7 +8,7 @@
     <img *ngIf="!getUser()?.image" alt="Silhouette of a person's head" src="../../../assets/images/user-96.png" />
     <img *ngIf="getUser()?.image" alt="Person picture" [src]="getUser().image" />
   </ion-avatar>
-  <ion-label id="date" class="ion-text-center ion-text-wrap">{{assign.dateTime | date:'short'}}</ion-label>
+  <ion-label id="date" class="ion-text-center ion-text-wrap">{{assignInfo.dateTime | date:'short'}}</ion-label>
   <!-- BUTTONS -->
   <ion-button icon-only fill="clear" (click)="onEditClick()"><ion-icon style="zoom:1.5" name="ellipsis-horizontal-circle-outline" ></ion-icon></ion-button>
   <ion-button icon-only fill="clear" color="danger" (click)="onDeleteClick()"><ion-icon style="zoom:1.5" name="close-circle-outline" ></ion-icon></ion-button>

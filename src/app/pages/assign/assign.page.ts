@@ -9,8 +9,6 @@ import { assignmentService } from 'src/app/services/assignment.service';
   styleUrls: ['./assign.page.scss'],
 })
 export class AssignPage implements OnInit {
-
-  public assigns:AssignDetailComponent;
   constructor(
     private assignmentsSvc:assignmentService,
     private modal:ModalController,
@@ -27,7 +25,7 @@ export class AssignPage implements OnInit {
     const modal = await this.modal.create({
       component:AssignDetailComponent,
       componentProps:{
-        assign:assign
+        assignInfo:assign
       },
     });
     modal.present();

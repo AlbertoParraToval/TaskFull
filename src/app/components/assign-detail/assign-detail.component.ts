@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
+
 import { assignModel } from 'src/app/models/assign.model';
 import { PeopleService } from 'src/app/services/people.service';
 import { tasksService } from 'src/app/services/tasks.service';
-import { assignmentService } from 'src/app/services/assignment.service';
-import { User } from 'src/app/models/user.model';
+
 @Component({
   selector: 'app-assign-detail',
   templateUrl: './assign-detail.component.html',
@@ -15,12 +15,12 @@ export class AssignDetailComponent implements OnInit {
   form:FormGroup;
   mode: "New" | "Edit" = "New";
 
-  @Input('assign') set assign(assignInfo:assignModel){
-    if(assignInfo){
-      this.form.controls.id.setValue(assignInfo.id);
-      this.form.controls.userId.setValue(assignInfo.userId);
-      this.form.controls.taskId.setValue(assignInfo.taskId);
-      this.form.controls.dateTime.setValue(assignInfo.dateTime);
+  @Input('assignInfo') set assignInfo(assigndata:assignModel){
+    if(assigndata){
+      this.form.controls.id.setValue(assigndata.id);
+      this.form.controls.userId.setValue(assigndata.userId);
+      this.form.controls.taskId.setValue(assigndata.taskId);
+      this.form.controls.dateTime.setValue(assigndata.dateTime);
       this.mode = "Edit";
     }
 
@@ -41,7 +41,6 @@ export class AssignDetailComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit(){
-    console.log(this.form.value)
       this.modal.dismiss({assign: this.form.value, mode: this.mode}, 'ok')
   }
 

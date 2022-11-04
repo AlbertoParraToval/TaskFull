@@ -17,7 +17,7 @@ export class AssignmentComponent implements OnInit {
 
   @Output() onEdit = new EventEmitter();
   @Output() onDelete = new EventEmitter();
-  @Input() assign: assignModel;
+  @Input() assignInfo: assignModel;
   constructor(
     private peopleSvc: PeopleService,
     private tasksSvc: tasksService,
@@ -28,23 +28,23 @@ export class AssignmentComponent implements OnInit {
 
   // METHODS
   getTask():taskModel{
-    var taskId = this.assign.id;
+    var taskId = this.assignInfo.id;
     if(taskId)
       return this.tasksSvc.getTaskById(taskId);
     return undefined;
   }
 
   getUser():User{
-    var userId = this.assign.id;
+    var userId = this.assignInfo.id;
     if(userId)
       return this.peopleSvc.getUserById(userId);
   }
 
   onEditClick(){
-    this.onEdit.emit(this.assign);
+    this.onEdit.emit(this.assignInfo);
   }
 
   onDeleteClick(){
-    this.onDelete.emit(this.assign);
+    this.onDelete.emit(this.assignInfo);
   }
 }

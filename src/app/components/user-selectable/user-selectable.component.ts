@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, forwardRef, OnInit } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { IonAccordionGroup } from '@ionic/angular';
 import { User } from 'src/app/models/user.model';
 import { PeopleService } from 'src/app/services/people.service';
@@ -7,8 +8,16 @@ import { PeopleService } from 'src/app/services/people.service';
   selector: 'app-user-selectable',
   templateUrl: './user-selectable.component.html',
   styleUrls: ['./user-selectable.component.scss'],
+  providers:[
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => UserSelectableComponent),
+      multi: true
+    }
+  ]
 })
-export class UserSelectableComponent implements OnInit {
+export class UserSelectableComponent implements OnInit, ControlValueAccessor{
+
   selectedUser:User=null;
   propagateChange = (_: any) => { }
   isDisabled:boolean = false;
@@ -17,9 +26,7 @@ export class UserSelectableComponent implements OnInit {
     private UserSVC:PeopleService
   ) { }
 
-
   writeValue(obj: any): void {
-    console.log(this.UserSVC.getUserById(obj).image);
     this.selectedUser = this.UserSVC.getUserById(obj);
   }
   registerOnChange(fn: any): void {
@@ -39,7 +46,6 @@ export class UserSelectableComponent implements OnInit {
   } 
 
   onUserClicked(user:User, accordion:IonAccordionGroup){
-    console.log(user);
     this.selectedUser = user;
     accordion.value='';
     this.propagateChange(this.selectedUser.id);

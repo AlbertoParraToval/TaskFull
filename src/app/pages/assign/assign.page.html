@@ -11,7 +11,7 @@
   <ion-button (click)="onNewAssignment()" style="margin:10px;width:50px;height:50px;--border-radius:50%" slot="start" icon-only><ion-icon style="zoom:2" name="add-outline"></ion-icon></ion-button>
   <ion-grid>
   <ion-list *ngFor="let assignment of getAssign()">
-      <app-assignment  [assign]="assignment" (onEdit)="onEditAssign($event)" (onDelete)="onDeleteAssign($event)"></app-assignment>
+      <app-assignment  [assignInfo]="assignment" (onEdit)="onEditAssign($event)" (onDelete)="onDeleteAssign($event)"></app-assignment>
   </ion-list>
 </ion-grid>
 

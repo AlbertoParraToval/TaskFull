@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Person data</ion-title>
+    <ion-title>Assignment data</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="onDismiss(null)"><ion-icon name="close-outline"></ion-icon></ion-button>
     </ion-buttons>
@@ -10,8 +10,9 @@
   
   <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
     <app-user-selectable formControlName="userId"></app-user-selectable>
+    <app-task-selectable formControlName="taskId"></app-task-selectable>
     <ion-datetime-button datetime="datetime"></ion-datetime-button>
-
+    
     <ion-modal [keepContentsMounted]="true">
       <ng-template>
         <ion-datetime id="datetime"></ion-datetime>

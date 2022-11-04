@@ -1,25 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, forwardRef, OnInit } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { IonAccordionGroup } from '@ionic/angular';
 import { taskModel } from 'src/app/models/taskModel.model';
 import { tasksService } from 'src/app/services/tasks.service';
+
+
+export const USER_PROFILE_VALUE_ACCESSOR: any = {
+  provide: NG_VALUE_ACCESSOR,
+  useExisting: forwardRef(() => TaskSelectableComponent),
+  multi: true
+};
+
 
 @Component({
   selector: 'app-task-selectable',
   templateUrl: './task-selectable.component.html',
   styleUrls: ['./task-selectable.component.scss'],
+  providers:[USER_PROFILE_VALUE_ACCESSOR]
 })
-export class TaskSelectableComponent implements OnInit {
+export class TaskSelectableComponent implements OnInit, ControlValueAccessor {
 
   selectedTask:taskModel=null;
   propagateChange = (_: any) => { }
   isDisabled:boolean = false;
 
   constructor(
-    private taskSvc:tasksService
+    private TaskSVC:tasksService
   ) { }
 
+
   writeValue(obj: any): void {
-    this.selectedTask = this.taskSvc.getTaskById(obj);
+    console.log(this.TaskSVC.getTaskById(obj).image);
+    this.selectedTask = this.TaskSVC.getTaskById(obj);
   }
   registerOnChange(fn: any): void {
     this.propagateChange = fn;
@@ -33,11 +45,12 @@ export class TaskSelectableComponent implements OnInit {
 
   ngOnInit() {}
 
-  getPeople(){
-    return this.taskSvc.getTask();
+  getTasks(){
+    return this.TaskSVC.getTask();
   } 
 
   onTaskClicked(task:taskModel, accordion:IonAccordionGroup){
+    console.log(task);
     this.selectedTask = task;
     accordion.value='';
     this.propagateChange(this.selectedTask.id);
