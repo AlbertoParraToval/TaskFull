@@ -48,11 +48,11 @@ export class assignmentService {
   }
 
   getAssignmentsByTaskId(id:number): assignModel[]{
-    return this.assignInfo.filter(a=>a.taskId == id);
+    return this.assignInfo.filter(a=>a.id == id);
   }
 
   getAssignmentsByPersonId(id:number):assignModel[]{
-    return this.assignInfo.filter(a=>a.userId == id);
+    return this.assignInfo.filter(a=>a.id == id);
   }
 
   deleteAssignmentById(id:number){
