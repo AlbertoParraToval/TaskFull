@@ -8,6 +8,7 @@ import { AssignDetailComponent } from 'src/app/components/assign-detail/assign-d
 import { AssignmentComponent } from 'src/app/components/assignment/assignment.component';
 import { UserSelectableComponent } from 'src/app/components/user-selectable/user-selectable.component';
 import { TaskSelectableComponent } from 'src/app/components/task-selectable/task-selectable.component';
+import { DateTimeSelectableComponent } from 'src/app/components/date-time-selectable/date-time-selectable.component';
 
 @NgModule({
   imports: [
@@ -18,6 +19,6 @@ import { TaskSelectableComponent } from 'src/app/components/task-selectable/task
     ReactiveFormsModule,
     
   ],
-  declarations: [AssignPage, AssignDetailComponent, AssignmentComponent,UserSelectableComponent,TaskSelectableComponent]
+  declarations: [AssignPage, AssignDetailComponent, AssignmentComponent,UserSelectableComponent,TaskSelectableComponent,DateTimeSelectableComponent]
 })
 export class AssignPageModule {}
