@@ -73,6 +73,5 @@ export class PeopleService {
       userdata.nickname = userUpdate.nickname;
       userdata.description = userUpdate.description;
     }
-    
   }
 }

@@ -18,6 +18,7 @@ export class AssignmentComponent implements OnInit {
   @Output() onEdit = new EventEmitter();
   @Output() onDelete = new EventEmitter();
   @Input() assignInfo: assignModel;
+  
   constructor(
     private peopleSvc: PeopleService,
     private tasksSvc: tasksService,
